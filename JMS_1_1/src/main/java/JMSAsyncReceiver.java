@@ -32,7 +32,7 @@ public class JMSAsyncReceiver implements MessageListener
   {
     try
     {
-      System.out.println(((TextMessage) message).getText());
+      System.out.println(((TextMessage) message).getText() + ", Trader = " + message.getStringProperty("TraderName"));
     }
     catch (Exception e)
     {

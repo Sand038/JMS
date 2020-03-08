@@ -18,7 +18,6 @@ public class JMSReceiver
     MessageConsumer consumer = session.createConsumer(queue);
     
     TextMessage message = (TextMessage) consumer.receive(); //receiveNull
-    
     System.out.println(message.getText() + ", Trader = " + message.getStringProperty("TraderName"));
     connection.close();
   }
