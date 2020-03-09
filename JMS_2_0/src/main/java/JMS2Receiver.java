@@ -12,7 +12,7 @@ public class JMS2Receiver
     ConnectionFactory connectionFactory = new ConnectionFactory();
     try (JMSContext context = connectionFactory.createContext();)
     {
-      Queue queue = context.createQueue("EM_JMS2_TRADE.Q");
+      Queue queue = context.createQueue("EM_JMS2_TRADE.T");
       Message message = context.createConsumer(queue).receive();
       System.out.println(message.getBody(String.class) + ", Trader name = " + message.getStringProperty("TraderName"));
     }
